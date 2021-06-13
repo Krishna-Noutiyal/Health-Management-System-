@@ -16,38 +16,60 @@ time = getdate()
 name1 = "Krishna"
 name2 = "Sagar"
 name3 = "Chirag"
-print("\n\n\tHello welcome to Health Management system \n\t\tCreated by - Krishna\n")
+print("\n\n\tHello welcome to Health Management system \n\t\tCreated by - Krishna")
 
-print("\tThis program creates or retrives exercise and diet plan for \n")
+#Name of persons 
+def person():
+    print("\n\n\tThis program creates or retrives exercise and diet plan for \n")
 
-print("\t\t1 ->", name1, "\n\t\t2 ->", name2, "\n\t\t3 ->", name3, "\n\n\t")
+    print("\t\t1 ->", name1, "\n\t\t2 ->", name2, "\n\t\t3 ->", name3)
 
+#underline for beauty of program
+def line():
+    a = print("_"*150,end="\n\n")
+    return a
 
+#calling person() function
+person()
 try:
     #Line for some comfert
-    print("_"*100,end="\n\n")
 
 
-    # Name selection
-    name_inp = int(input("\n\nSelect the person you want to create diet plan for by pressing 1, 2, or 3 respectively: "))
-
-
-    #Line for some comfert
-    print("\n","_"*100, end="\n")
-
-
-
-    # Create or retrive file
-    create_ret = bool(int(input("\n\n\tWhat you want to do\n\n\t0 -> Create exercise or diet \n\t1 -> Retrive exesting exercise or diet\n\n Note: anyting other than 0 will be considerd as 1\n\n Press 0 or 1 respectively: ")))
+# Create or retrive file
+    create_ret = bool(int(input("\n\n\tWhat you want to do\n\n\t0 -> Create \n\t1 -> Retrive \n\n Note: anyting other than 0 will be considerd as 1\n\n Press 0 or 1 respectively: ")))
 
 
     #Line for some comfert
-    print("\n","_"*100)
+    line()
 
 
-    #asking for diet or exercise
+#asking for diet or exercise
     exe_diet = bool(int(input("\n\n\tWhich file u want to create or retrive\n\n\t0 -> Exercise file \n\t1 -> Diet file\n\n Note: anyting other than 0 will be considerd as 1\n\n Press 0 or 1 respectively: ")))
 
+
+
+    #Line for some comfert
+    line()
+
+
+# Name selection
+
+    if create_ret == False and exe_diet == False:
+        person()
+        name_inp = int(input("\nSelect the person you want to create exercise plan for by pressing 1, 2, or 3 respectively: "))
+
+    elif create_ret == False and exe_diet == True:
+        person()
+        name_inp = int(input("\nSelect the person you want to create diet plan for by pressing 1, 2, or 3 respectively: "))
+    
+    elif create_ret == True and exe_diet == False:
+        person()
+        name_inp = int(input("\nSelect the person you want to retrive exercise plan for by pressing 1, 2, or 3 respectively: "))
+    
+    elif create_ret == True and exe_diet == True:
+        person()
+        name_inp = int(input("\nSelect the person you want to retrive diet plan for by pressing 1, 2, or 3 respectively: "))
+    
 
     """
     Creating files Starts
@@ -450,15 +472,15 @@ try:
         exe_plan_func = exe()
         
     elif create_ret == True and exe_diet == True:
+        print(time,"\n\n")
         read_diet_plan_func = read_diet()
 
     elif create_ret == True and exe_diet == False:
+        print(time,"\n\n")
         read_exe_plan_func = read_exe()
     
     else:
         print("You did someting wrong try again")
-        
-        
 except Exception as e:
     # print(e)
     print("\n\n\t\tUnable to retrive the file: File not found\n\n\t\t\tPlease create the file first\n\n")
