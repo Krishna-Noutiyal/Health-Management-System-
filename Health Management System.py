@@ -22,7 +22,7 @@ print("\n\n\tHello welcome to Health Management system \n\t\tCreated by - Krishn
 def person():
     print("\n\n\tThis program creates or retrives exercise and diet plan for \n")
 
-    print("\t\t1 ->", name1, "\n\t\t2 ->", name2, "\n\t\t3 ->", name3)
+    print("\t\t1 ->", name1, "\n\t\t2 ->", name2, "\n\t\t3 ->", name3,"\n")
 
 #underline for beauty of program
 def line():
@@ -33,10 +33,10 @@ def line():
 person()
 try:
     #Line for some comfert
-
+    line()
 
 # Create or retrive file
-    create_ret = bool(int(input("\n\n\tWhat you want to do\n\n\t0 -> Create \n\t1 -> Retrive \n\n Note: anyting other than 0 will be considerd as 1\n\n Press 0 or 1 respectively: ")))
+    create_ret = bool(int(input("\n\tWhat you want to do\n\n\t0 -> Create \n\t1 -> Retrive \n\n Note: anyting other than 0 will be considerd as 1\n\n Press 0 or 1 respectively: ")))
 
 
     #Line for some comfert
