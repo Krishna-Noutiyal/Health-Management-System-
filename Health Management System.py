@@ -457,9 +457,11 @@ try:
     
     else:
         print("You did someting wrong try again")
+        
+        
 except Exception as e:
-    print(e)
-    # print("\n\n\t\tYou did someting wrong plz try again\n\n")
+    # print(e)
+    print("\n\n\t\tUnable to retrive the file: File not found\n\n\t\t\tPlease create the file first\n\n")
 
 close = input("\n\nPress enter to close: ")
 print()
